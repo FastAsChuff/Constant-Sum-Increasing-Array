@@ -24,7 +24,7 @@ _Bool constsumincarr_next(uint32_t buckets, uint32_t *constsumincarr) {
 
 uint32_t *constsumincarr_init(uint32_t buckets, uint32_t sum) {
   if (buckets == 0) return NULL;
-  if (buckets >> 31 != 0) return NULL;
+  if ((buckets >> 31) != 0) return NULL;
   uint32_t *constsumincarr = calloc(buckets, sizeof(uint32_t));  
   if (constsumincarr == NULL) return NULL;
   constsumincarr[buckets-1] = sum;
